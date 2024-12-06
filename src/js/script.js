@@ -6,3 +6,13 @@ const mobileNav = document.getElementById('mobile-nav');
 menuToggle.addEventListener('click', () => {
   mobileNav.classList.toggle('hidden'); // Alterna la clase 'hidden'
 });
+
+
+
+function openModal() {
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+}

@@ -16,11 +16,11 @@
 
     <!-- Navegación (Escritorio y desplegable) -->
     <nav id="mobile-nav" class="hidden md:flex text-center flex-col md:flex-row md:space-x-8 absolute md:relative top-16 md:top-0 left-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none z-10">
-      <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">SOBRE GIANTX</a>
+      <a href="../index.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">SOBRE GIANTX</a>
       <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TIENDA</a>
       <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NUESTRAS MARCAS</a>
       <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NOTICIAS</a>
-      <a href="./pages/trabajo.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TRABAJO</a>
+      <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TRABAJO</a>
     </nav>
 
     <!-- Logo Derecho -->
@@ -38,50 +38,144 @@
     </div>
   </header>
 
-  <div class="text-center py-8">
-    <h1 class="font-monument text-4xl font-bold text-black">GIANTX</h1>
-    <p class="text-sm text-gray-600">JUNTOS SOMOS GIGANTES</p>
-  </div>
+  
 
-  <!-- Primera Imagen con Texto -->
-  <section class="container mx-auto px-4">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <img src="./assets/images/1.png" alt="GiantX banner" class="w-full h-auto">
-      <div class="p-4">
-        <h2 class="text-lg font-bold text-black">
-          GIANTS Y EXCEL SE FUSIONAN Y NACE GIANTX, ORGANIZACIÓN QUE COMPETIRÁ EN LA ÉLITE MUNDIAL DE LOS ESPORTS
-        </h2>
+
+  <div class="relative wave-pattern">
+    <!-- Encabezado -->
+    <header class="text-center py-12">
+      <div class="flex justify-center mb-6">
+        <div class="bg-black p-4 rounded-full">
+            <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z" fill="white"></path><path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z" fill="blue"></path><path d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z" fill="blue"></path></svg>
+        </div>
+      </div>
+      <h1 class="text-5xl font-bold tracking-wide">Trabajos Disponibles</h1>
+      <p class="text-lg mt-2 text-gray-700">Únete a nuestro equipo y sé parte de GiantX</p>
+    </header>
+
+    <!-- Tabla de trabajos -->
+       <!-- Tabla de trabajos -->
+       <div class="max-w-6xl mx-auto px-6 py-8">
+        <table class="w-full table-auto border-collapse overflow-hidden rounded-lg shadow-xl">
+          <thead>
+            <tr class="bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 text-black">
+              <th class="px-6 py-4 text-left font-medium">Puesto</th>
+              <th class="px-6 py-4 text-left font-medium">Ubicación</th>
+              <th class="px-6 py-4 text-left font-medium">Modalidad</th>
+              <th class="px-6 py-4 text-left font-medium">Postular</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-300">
+            <tr class="hover:bg-gray-100">
+              <td class="px-6 py-4">Diseñador Gráfico</td>
+              <td class="px-6 py-4">Remoto</td>
+              <td class="px-6 py-4">Tiempo Completo</td>
+              <td class="px-6 py-4">
+                <button onclick="openModal()" class="text-blue-600 hover:underline">Aplicar</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-6 py-4">Desarrollador Frontend</td>
+              <td class="px-6 py-4">Madrid, España</td>
+              <td class="px-6 py-4">Híbrido</td>
+              <td class="px-6 py-4">
+                <button onclick="openModal()" class="text-blue-600 hover:underline">Aplicar</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="px-6 py-4">Gerente de Marketing</td>
+              <td class="px-6 py-4">Barcelona, España</td>
+              <td class="px-6 py-4">Tiempo Completo</td>
+              <td class="px-6 py-4">
+                <button onclick="openModal()" class="text-blue-600 hover:underline">Aplicar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
-
-  <!-- Flecha -->
-  <div class="flex justify-center my-6">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-  </div>
-
-  <!-- Segunda Imagen y Bundle -->
-  <section class="container mx-auto px-4">
-    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-      <img src="./assets/images/2.png" alt="GiantX Bundle" class="w-full h-auto">
-      <div class="p-4 text-center">
-        <h2 class="text-4xl font-bold text-black">GIANTX BUNDLE</h2>
-        <p class="mt-4 text-sm text-gray-700">
-          Estamos emocionados de anunciar el lanzamiento de nuestra primera colección de skins personalizadas en <span class="font-bold">Valorant</span>. 
-          El bundle exclusivo está disponible para su compra en el cliente del juego a partir del 22 de febrero.
-        </p>
+  
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+          <h2 class="text-xl font-bold mb-4">Postular al Puesto</h2>
+          <p class="mb-4">Por favor, completa el formulario para aplicar.</p>
+          <form>
+            <div class="mb-4">
+              <label for="nombre" class="block text-sm font-medium">Nombre:</label>
+              <input type="text" id="nombre" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium">Email:</label>
+              <input type="email" id="email" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu email" required>
+            </div>
+            <div class="mb-4">
+              <label for="telefono" class="block text-sm font-medium">Teléfono:</label>
+              <input type="tel" id="telefono" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu número" pattern="[0-9]{10}" required>
+            </div>
+            <div class="mb-4">
+              <label for="fecha" class="block text-sm font-medium">Fecha de Nacimiento:</label>
+              <input type="date" id="fecha" class="w-full px-3 py-2 border rounded-md" required>
+            </div>
+            <div class="mb-4">
+              <label for="cv" class="block text-sm font-medium">Sube tu CV:</label>
+              <input type="file" id="cv" class="w-full px-3 py-2 border rounded-md" accept=".pdf,.doc,.docx" required>
+            </div>
+            <div class="mb-4">
+              <label for="experiencia" class="block text-sm font-medium">Experiencia Laboral:</label>
+              <select id="experiencia" class="w-full px-3 py-2 border rounded-md" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1-3">1-3 años</option>
+                <option value="3-5">3-5 años</option>
+                <option value="5+">Más de 5 años</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm font-medium">Disponibilidad:</p>
+              <div>
+                <label class="inline-flex items-center">
+                  <input type="radio" name="disponibilidad" value="Inmediata" required class="mr-2">
+                  Inmediata
+                </label>
+              </div>
+              <div>
+                <label class="inline-flex items-center">
+                  <input type="radio" name="disponibilidad" value="1 mes" class="mr-2">
+                  En un mes
+                </label>
+              </div>
+            </div>
+            <div class="mb-4">
+              <p class="text-sm font-medium">Habilidades:</p>
+              <div>
+                <label class="inline-flex items-center">
+                  <input type="checkbox" name="habilidades" value="Liderazgo" class="mr-2">
+                  Liderazgo
+                </label>
+              </div>
+              <div>
+                <label class="inline-flex items-center">
+                  <input type="checkbox" name="habilidades" value="Trabajo en equipo" class="mr-2">
+                  Trabajo en equipo
+                </label>
+              </div>
+              <div>
+                <label class="inline-flex items-center">
+                  <input type="checkbox" name="habilidades" value="Creatividad" class="mr-2">
+                  Creatividad
+                </label>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-500 text-white rounded-md mr-2">Cancelar</button>
+              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md">Enviar</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Botón Más Info -->
-  <div class="flex justify-center my-6">
-    <a href="#" class="px-6 py-2 text-sm font-bold text-white bg-black rounded-full hover:bg-gray-800">
-      MÁS INFO
-    </a>
   </div>
+
+
 
 
   <footer class="text-center py-6 border-t-2 border-blue-700">
@@ -131,6 +225,6 @@
   </footer>
 
 
-  <script src="./js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
