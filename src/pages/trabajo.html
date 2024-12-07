@@ -17,7 +17,7 @@
     <!-- Navegación (Escritorio y desplegable) -->
     <nav id="mobile-nav" class="hidden md:flex text-center flex-col md:flex-row md:space-x-8 absolute md:relative top-16 md:top-0 left-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none z-10">
       <a href="../index.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">SOBRE GIANTX</a>
-      <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TIENDA</a>
+      <a href="./tienda.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TIENDA</a>
       <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NUESTRAS MARCAS</a>
       <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NOTICIAS</a>
       <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TRABAJO</a>
@@ -96,83 +96,84 @@
     </div>
   
     <!-- Modal -->
-    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-96">
-          <h2 class="text-xl font-bold mb-4">Postular al Puesto</h2>
-          <p class="mb-4">Por favor, completa el formulario para aplicar.</p>
-          <form>
-            <div class="mb-4">
-              <label for="nombre" class="block text-sm font-medium">Nombre:</label>
-              <input type="text" id="nombre" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu nombre" required>
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 overflow-y-auto z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-96 max-h-screen overflow-y-auto">
+        <h2 class="text-xl font-bold mb-4">Postular al Puesto</h2>
+        <p class="mb-4">Por favor, completa el formulario para aplicar.</p>
+        <form>
+          <div class="mb-4">
+            <label for="nombre" class="block text-sm font-medium">Nombre:</label>
+            <input type="text" id="nombre" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu nombre" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium">Email:</label>
+            <input type="email" id="email" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu email" required>
+          </div>
+          <div class="mb-4">
+            <label for="telefono" class="block text-sm font-medium">Teléfono:</label>
+            <input type="tel" id="telefono" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu número" pattern="[0-9]{10}" required>
+          </div>
+          <div class="mb-4">
+            <label for="fecha" class="block text-sm font-medium">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha" class="w-full px-3 py-2 border rounded-md" required>
+          </div>
+          <div class="mb-4">
+            <label for="cv" class="block text-sm font-medium">Sube tu CV:</label>
+            <input type="file" id="cv" class="w-full px-3 py-2 border rounded-md" accept=".pdf,.doc,.docx" required>
+          </div>
+          <div class="mb-4">
+            <label for="experiencia" class="block text-sm font-medium">Experiencia Laboral:</label>
+            <select id="experiencia" class="w-full px-3 py-2 border rounded-md" required>
+              <option value="">Selecciona una opción</option>
+              <option value="1-3">1-3 años</option>
+              <option value="3-5">3-5 años</option>
+              <option value="5+">Más de 5 años</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <p class="text-sm font-medium">Disponibilidad:</p>
+            <div>
+              <label class="inline-flex items-center">
+                <input type="radio" name="disponibilidad" value="Inmediata" required class="mr-2">
+                Inmediata
+              </label>
             </div>
-            <div class="mb-4">
-              <label for="email" class="block text-sm font-medium">Email:</label>
-              <input type="email" id="email" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu email" required>
+            <div>
+              <label class="inline-flex items-center">
+                <input type="radio" name="disponibilidad" value="1 mes" class="mr-2">
+                En un mes
+              </label>
             </div>
-            <div class="mb-4">
-              <label for="telefono" class="block text-sm font-medium">Teléfono:</label>
-              <input type="tel" id="telefono" class="w-full px-3 py-2 border rounded-md" placeholder="Ingresa tu número" pattern="[0-9]{10}" required>
+          </div>
+          <div class="mb-4">
+            <p class="text-sm font-medium">Habilidades:</p>
+            <div>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="habilidades" value="Liderazgo" class="mr-2">
+                Liderazgo
+              </label>
             </div>
-            <div class="mb-4">
-              <label for="fecha" class="block text-sm font-medium">Fecha de Nacimiento:</label>
-              <input type="date" id="fecha" class="w-full px-3 py-2 border rounded-md" required>
+            <div>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="habilidades" value="Trabajo en equipo" class="mr-2">
+                Trabajo en equipo
+              </label>
             </div>
-            <div class="mb-4">
-              <label for="cv" class="block text-sm font-medium">Sube tu CV:</label>
-              <input type="file" id="cv" class="w-full px-3 py-2 border rounded-md" accept=".pdf,.doc,.docx" required>
+            <div>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="habilidades" value="Creatividad" class="mr-2">
+                Creatividad
+              </label>
             </div>
-            <div class="mb-4">
-              <label for="experiencia" class="block text-sm font-medium">Experiencia Laboral:</label>
-              <select id="experiencia" class="w-full px-3 py-2 border rounded-md" required>
-                <option value="">Selecciona una opción</option>
-                <option value="1-3">1-3 años</option>
-                <option value="3-5">3-5 años</option>
-                <option value="5+">Más de 5 años</option>
-              </select>
-            </div>
-            <div class="mb-4">
-              <p class="text-sm font-medium">Disponibilidad:</p>
-              <div>
-                <label class="inline-flex items-center">
-                  <input type="radio" name="disponibilidad" value="Inmediata" required class="mr-2">
-                  Inmediata
-                </label>
-              </div>
-              <div>
-                <label class="inline-flex items-center">
-                  <input type="radio" name="disponibilidad" value="1 mes" class="mr-2">
-                  En un mes
-                </label>
-              </div>
-            </div>
-            <div class="mb-4">
-              <p class="text-sm font-medium">Habilidades:</p>
-              <div>
-                <label class="inline-flex items-center">
-                  <input type="checkbox" name="habilidades" value="Liderazgo" class="mr-2">
-                  Liderazgo
-                </label>
-              </div>
-              <div>
-                <label class="inline-flex items-center">
-                  <input type="checkbox" name="habilidades" value="Trabajo en equipo" class="mr-2">
-                  Trabajo en equipo
-                </label>
-              </div>
-              <div>
-                <label class="inline-flex items-center">
-                  <input type="checkbox" name="habilidades" value="Creatividad" class="mr-2">
-                  Creatividad
-                </label>
-              </div>
-            </div>
-            <div class="flex justify-end">
-              <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-500 text-white rounded-md mr-2">Cancelar</button>
-              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md">Enviar</button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="flex justify-end">
+            <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-500 text-white rounded-md mr-2">Cancelar</button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md">Enviar</button>
+          </div>
+        </form>
       </div>
+    </div>
+    
   </div>
 
 
@@ -210,11 +211,6 @@
       <a href="#" class="hover:text-black">CONTACT US</a>
     </div>
   
-    <!-- Copyright -->
-    <p class="text-xs text-gray-500 mb-6">
-      © COPYRIGHT GIANTX. TODOS LOS DERECHOS RESERVADOS
-    </p>
-  
     <!-- Selector de idioma -->
     <div class="flex justify-center">
       <button class="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
@@ -223,6 +219,11 @@
       </button>
     </div>
   </footer>
+  <div class="bg-blue-900 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 GIANTX. Todos los derechos reservados.</p>
+    </div>
+  </div>
 
 
   <script src="../js/script.js"></script>
