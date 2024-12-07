@@ -1,185 +1,343 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIANTX</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="./css/output.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIANTX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body class="bg-white">
-  <header class="flex items-center justify-between px-8 py-4 shadow-md">
-    <!-- Logo Izquierdo -->
-    <div class="flex items-center space-x-2">
-      <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z" fill="black"></path><path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z" fill="blue"></path><path d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z" fill="blue"></path></svg>
-    </div>
-
-    <!-- Navegación (Escritorio y desplegable) -->
-    <nav id="mobile-nav" class="hidden md:flex text-center flex-col md:flex-row md:space-x-8 absolute md:relative top-16 md:top-0 left-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none z-10">
-      <a href="../index.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">SOBRE GIANTX</a>
-      <a href="./tienda.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TIENDA</a>
-      <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NUESTRAS MARCAS</a>
-      <a href="#" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NOTICIAS</a>
-      <a href="./trabajo.html" class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TRABAJO</a>
-    </nav>
-
-    <!-- Logo Derecho -->
-    <div class="hidden md:flex items-center space-x-2">
-      <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z" fill="var(--text-colour)"></path><path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z" fill="var(--text-colour)"></path><path d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z" fill="var(--text-colour)"></path></svg>
-    </div>
-
-    <!-- Botón Menú Hamburguesa -->
-    <div class="block md:hidden">
-      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-  </header>
-
-  <section class="bg-blue-900 text-white py-16">
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl font-bold">¡Bienvenido a la Tienda GIANTX!</h1>
-      <p class="mt-4 text-lg">Descubre productos exclusivos y de alta calidad para todos los fans.</p>
-    </div>
-  </section>
-
-  <!-- Filtro -->
-  <section class="container mx-auto py-6 animate-fade-in">
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">Filtrar Productos</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-      <select class="w-full p-2 border rounded-md" id="categoria">
-        <option value="">Categoría</option>
-        <option value="ropa">Ropa</option>
-        <option value="accesorios">Accesorios</option>
-        <option value="electronica">Electrónica</option>
-      </select>
-      <select class="w-full p-2 border rounded-md" id="precio">
-        <option value="">Rango de Precio</option>
-        <option value="bajo">Menos de $50</option>
-        <option value="medio">$50 - $100</option>
-        <option value="alto">Más de $100</option>
-      </select>
-      <select class="w-full p-2 border rounded-md" id="valoracion">
-        <option value="">Valoración</option>
-        <option value="5">5 estrellas</option>
-        <option value="4">4 estrellas</option>
-        <option value="3">3 estrellas o menos</option>
-      </select>
-      <button class="bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-blue-900" onclick="filtrarProductos()">Aplicar Filtros</button>
-    </div>
-  </section>
-
-  <!-- Productos -->
-  <main class="container mx-auto py-8">
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Nuestros Productos</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="productos">
-      <!-- Producto 1 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
-        <img src="https://via.placeholder.com/300x200" alt="Producto 1" class="w-full">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-gray-800">Producto 1</h3>
-          <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-blue-600 font-bold">$49.99</span>
-            <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
-          </div>
+    <header class="flex items-center justify-between px-8 py-4 shadow-md">
+        <!-- Logo Izquierdo -->
+        <div class="flex items-center space-x-2">
+            <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z"
+                    fill="black"></path>
+                <path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z" fill="blue"></path>
+                <path
+                    d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z"
+                    fill="blue"></path>
+            </svg>
         </div>
-      </div>
 
-      <!-- Producto 2 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
-        <img src="https://via.placeholder.com/300x200" alt="Producto 2" class="w-full">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-gray-800">Producto 2</h3>
-          <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-blue-600 font-bold">$59.99</span>
-            <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
-          </div>
+        <!-- Navegación (Escritorio y desplegable) -->
+        <nav id="mobile-nav"
+            class="hidden md:flex text-center flex-col md:flex-row md:space-x-8 absolute md:relative top-16 md:top-0 left-0 md:left-auto w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none z-10">
+            <a href="../index.html"
+                class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">SOBRE
+                GIANTX</a>
+            <a href="./tienda.html"
+                class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TIENDA</a>
+            <a href="#"
+                class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NUESTRAS
+                MARCAS</a>
+            <a href="./noticias.html"
+                class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">NOTICIAS</a>
+            <a href="./trabajo.html"
+                class="block text-sm font-bold text-gray-500 border-b-4 border-transparent hover:text-black hover:border-blue-700 px-4 py-2 md:px-0">TRABAJO</a>
+        </nav>
+
+        <!-- Logo Derecho -->
+        <div class="hidden md:flex items-center space-x-2">
+            <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z"
+                    fill="var(--text-colour)"></path>
+                <path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z"
+                    fill="var(--text-colour)"></path>
+                <path
+                    d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z"
+                    fill="var(--text-colour)"></path>
+            </svg>
         </div>
-      </div>
 
-      <!-- Producto 3 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
-        <img src="https://via.placeholder.com/300x200" alt="Producto 3" class="w-full">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-gray-800">Producto 3</h3>
-          <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-blue-600 font-bold">$39.99</span>
-            <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
-          </div>
+        <!-- Botón Menú Hamburguesa -->
+        <div class="block md:hidden">
+            <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
         </div>
-      </div>
+    </header>
 
-      <!-- Producto 4 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
-        <img src="https://via.placeholder.com/300x200" alt="Producto 4" class="w-full">
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-gray-800">Producto 4</h3>
-          <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-blue-600 font-bold">$29.99</span>
-            <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
-          </div>
+    <section class="bg-blue-900 text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">¡Bienvenido a la Tienda GIANTX!</h1>
+            <p class="mt-4 text-lg">Descubre productos exclusivos y de alta calidad para todos los fans.</p>
         </div>
-      </div>
+    </section>
 
-      <!-- Repite para más productos -->
+    <!-- Filtro -->
+    <section class="container mx-auto p-8 animate-fade-in">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Filtrar Productos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <select class="w-full p-2 border rounded-md" id="categoria">
+                <option value="">Categoría</option>
+                <option value="ropa">Ropa</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="electronica">Electrónica</option>
+            </select>
+            <select class="w-full p-2 border rounded-md" id="precio">
+                <option value="">Rango de Precio</option>
+                <option value="bajo">Menos de $50</option>
+                <option value="medio">$50 - $100</option>
+                <option value="alto">Más de $100</option>
+            </select>
+            <select class="w-full p-2 border rounded-md" id="valoracion">
+                <option value="">Valoración</option>
+                <option value="5">5 estrellas</option>
+                <option value="4">4 estrellas</option>
+                <option value="3">3 estrellas o menos</option>
+            </select>
+            <button class="bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-blue-900"
+                onclick="filtrarProductos()">Aplicar Filtros</button>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
+        <span>#WEAREGIANTX</span>
     </div>
-  </main>
+
+    <!-- Productos -->
+    <main class="container mx-auto p-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Nuestros Productos</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="productos">
+            <!-- Producto 1 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/abbyblackfriday.png" alt="Producto 1" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Sudadera Competitiva</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$89.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/hoodie13.png" alt="Producto 2" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 2</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$59.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/hoodie7.png" alt="Producto 3" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 3</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$39.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/hoodie9_d2d9ff63-501d-45ec-89a9-af7d456e02e2.png" alt="Producto 4"
+                    class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 4</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$29.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/hoodies.png" alt="Producto 4" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 4</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$29.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/jessblackfriday_4a59d723-0889-4dfd-9947-3099e7e2b02e.png" alt="Producto 4"
+                    class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 4</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$29.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/shirt7.png" alt="Producto 4" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 4</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$29.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform animate-fade-in">
+                <img src="../assets/images/shirt8.png" alt="Producto 4" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800">Producto 4</h3>
+                    <p class="text-gray-600 mt-2">Descripción breve del producto.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-blue-600 font-bold">$29.99</span>
+                        <button class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
-  <footer class="text-center py-6 border-t-2 border-blue-700">
-    <!-- Logo -->
-    <div class="flex justify-center mb-6">
-      <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z" fill="black"></path><path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z" fill="blue"></path><path d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z" fill="blue"></path></svg>
-    </div>
-  
-    <!-- Redes Sociales -->
-    <div class="flex items-center justify-center space-x-4 mb-6">
-        <a class="SocialLinks_link__rvhLB" href="https://twitter.com/giantx_es" target="_blank" aria-label="Follow me on Twitter"><svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="currentColor"></path></svg></a>
-      </a>
-      <a href="#" class="text-gray-500 hover:text-black">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.99954 1.78603C11.3507 1.78603 11.6267 1.79652 12.556 1.83844C13.4154 1.87687 13.8801 2.0201 14.191 2.14238C14.6032 2.30308 14.8967 2.49174 15.2041 2.79917C15.5116 3.10661 15.7037 3.40007 15.8609 3.81231C15.9797 4.12324 16.1264 4.58788 16.1649 5.4473C16.2068 6.37659 16.2173 6.65259 16.2173 9.00376C16.2173 11.3549 16.2068 11.6309 16.1649 12.5602C16.1264 13.4196 15.9832 13.8843 15.8609 14.1952C15.7002 14.6075 15.5116 14.9009 15.2041 15.2084C14.8967 15.5158 14.6032 15.7079 14.191 15.8651C13.8801 15.9839 13.4154 16.1307 12.556 16.1691C11.6267 16.211 11.3507 16.2215 8.99954 16.2215C6.64836 16.2215 6.37237 16.211 5.44308 16.1691C4.58366 16.1307 4.11901 15.9874 3.80808 15.8651C3.39584 15.7044 3.10238 15.5158 2.79495 15.2084C2.48751 14.9009 2.29537 14.6075 2.13815 14.1952C2.01937 13.8843 1.87264 13.4196 1.83421 12.5602C1.79229 11.6309 1.78181 11.3549 1.78181 9.00376C1.78181 6.65259 1.79229 6.37659 1.83421 5.4473C1.87264 4.58788 2.01588 4.12324 2.13815 3.81231C2.29886 3.40007 2.48751 3.10661 2.79495 2.79917C3.10238 2.49174 3.39584 2.29959 3.80808 2.14238C4.11901 2.0236 4.58366 1.87687 5.44308 1.83844C6.37237 1.79302 6.65186 1.78603 8.99954 1.78603ZM8.99954 0.199951C6.60993 0.199951 6.30949 0.210432 5.36971 0.252355C4.43344 0.294278 3.79411 0.444502 3.23514 0.661103C2.6552 0.884692 2.1661 1.18863 1.677 1.67773C1.1879 2.16683 0.887454 2.65943 0.660371 3.23587C0.443769 3.79484 0.293545 4.43417 0.251622 5.37394C0.209699 6.31022 0.199219 6.61066 0.199219 9.00027C0.199219 11.3899 0.209699 11.6903 0.251622 12.6301C0.293545 13.5664 0.443769 14.2057 0.660371 14.7682C0.88396 15.3481 1.1879 15.8372 1.677 16.3263C2.1661 16.8154 2.6587 17.1158 3.23514 17.3429C3.79411 17.5595 4.43344 17.7098 5.37321 17.7517C6.31298 17.7936 6.60993 17.8041 9.00304 17.8041C11.3961 17.8041 11.6931 17.7936 12.6329 17.7517C13.5691 17.7098 14.2085 17.5595 14.7709 17.3429C15.3509 17.1193 15.84 16.8154 16.3291 16.3263C16.8182 15.8372 17.1186 15.3446 17.3457 14.7682C17.5623 14.2092 17.7125 13.5699 17.7544 12.6301C17.7964 11.6903 17.8069 11.3934 17.8069 9.00027C17.8069 6.60717 17.7964 6.31022 17.7544 5.37044C17.7125 4.43417 17.5623 3.79484 17.3457 3.23238C17.1221 2.65244 16.8182 2.16334 16.3291 1.67424C15.84 1.18514 15.3474 0.884692 14.7709 0.65761C14.212 0.441008 13.5726 0.290784 12.6329 0.248861C11.6896 0.210432 11.3891 0.199951 8.99954 0.199951ZM8.99939 4.48308C6.50498 4.48308 4.47871 6.50586 4.47871 9.00376C4.47871 11.5017 6.50149 13.5244 8.99939 13.5244C11.4973 13.5244 13.5201 11.5017 13.5201 9.00376C13.5201 6.50586 11.4973 4.48308 8.99939 4.48308ZM8.99939 11.9349C7.37837 11.9349 6.06479 10.6213 6.06479 9.00027C6.06479 7.37925 7.37837 6.06566 8.99939 6.06566C10.6204 6.06566 11.934 7.37925 11.934 9.00027C11.934 10.6213 10.6204 11.9349 8.99939 11.9349ZM14.7535 4.30138C14.7535 4.88408 14.2812 5.35644 13.6985 5.35644C13.1158 5.35644 12.6434 4.88408 12.6434 4.30138C12.6434 3.71869 13.1158 3.24632 13.6985 3.24632C14.2812 3.24632 14.7535 3.71869 14.7535 4.30138Z" fill="currentColor"></path></svg>
-      </a>
-      <a href="#" class="text-gray-500 hover:text-black">
-        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.0901 2.1121C18.8685 1.28468 18.2037 0.631452 17.3616 0.402823C15.8437 0 9.75 0 9.75 0C9.75 0 3.65625 0 2.12727 0.402823C1.28523 0.620565 0.631534 1.27379 0.398864 2.1121C0 3.61452 0 6.75 0 6.75C0 6.75 0 9.88548 0.409943 11.3879C0.631534 12.2153 1.29631 12.8685 2.13835 13.0972C3.65625 13.5 9.75 13.5 9.75 13.5C9.75 13.5 15.8437 13.5 17.3727 13.0972C18.2148 12.8794 18.8685 12.2262 19.1011 11.3879C19.5 9.88548 19.5 6.75 19.5 6.75C19.5 6.75 19.5 3.61452 19.0901 2.1121ZM7.75568 9.60242V3.89758L12.8523 6.75L7.75568 9.60242Z" fill="currentColor"></path></svg>
-      </a>
-      <a href="#" class="text-gray-500 hover:text-black">
-        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M7.00165 7.28238V6.56182C6.74974 6.52218 6.4953 6.50047 6.24027 6.49684C3.77126 6.49167 1.58535 8.08033 0.843939 10.4188C0.102529 12.7572 0.977679 15.3027 3.00441 16.7029C1.48624 15.0896 1.0647 12.741 1.92807 10.7062C2.79145 8.67149 4.7785 7.33054 7.00165 7.28238Z" fill="currentColor"></path><path opacity="0.5" d="M7.13854 15.4448C8.51899 15.443 9.65371 14.3631 9.71414 12.9937V0.773719H11.9626C11.9167 0.518381 11.8948 0.259362 11.8972 0H8.8219V12.2082C8.77076 13.5846 7.63339 14.6748 6.2463 14.677C5.83179 14.6735 5.42404 14.5723 5.05664 14.3817C5.53959 15.0461 6.31333 15.4412 7.13854 15.4448Z" fill="currentColor"></path><path opacity="0.5" d="M16.1627 4.91986V4.24064C15.3352 4.24092 14.5261 3.99846 13.8369 3.5437C14.4411 4.24106 15.2575 4.72413 16.1627 4.91986Z" fill="currentColor"></path><path opacity="0.5" d="M13.8366 3.54376C13.1577 2.77614 12.7835 1.7894 12.7838 0.767822H11.9629C12.1772 1.90931 12.8547 2.91311 13.8366 3.54376Z" fill="currentColor"></path><path opacity="0.5" d="M6.24042 9.55052C5.0558 9.55655 4.02734 10.3624 3.74598 11.505C3.46463 12.6476 4.00259 13.8337 5.05077 14.3818C4.48282 13.6033 4.40259 12.5742 4.84309 11.7181C5.2836 10.862 6.17041 10.3235 7.13861 10.3242C7.39677 10.3274 7.65315 10.3672 7.89999 10.4424V7.33567C7.64792 7.29817 7.39349 7.27844 7.13861 7.27661H7.0018V9.63911C6.75368 9.57305 6.4972 9.54321 6.24042 9.55052Z" fill="currentColor"></path><path opacity="0.5" d="M16.1615 4.91992V7.28242C14.6296 7.27948 13.1375 6.79803 11.8966 5.90627V12.1137C11.89 15.2112 9.35929 17.7188 6.23977 17.7188C5.08126 17.7208 3.95066 17.3659 3.00391 16.7029C4.5839 18.3902 7.04282 18.9456 9.20243 18.103C11.362 17.2604 12.7824 15.1914 12.7829 12.8875V6.6977C14.028 7.58362 15.5219 8.0588 17.0537 8.05614V5.01442C16.7538 5.01347 16.4548 4.98181 16.1615 4.91992Z" fill="currentColor"></path><path d="M11.8971 12.1137V5.90626C13.1419 6.7929 14.6361 7.26816 16.168 7.2647V4.9022C15.2629 4.71244 14.4446 4.23566 13.8362 3.54376C12.8544 2.91311 12.1768 1.90931 11.9625 0.767822H9.71409V12.9938C9.66912 14.0845 8.93335 15.0273 7.88084 15.3428C6.82833 15.6583 5.69005 15.2773 5.0447 14.3935C3.99652 13.8454 3.45856 12.6593 3.73991 11.5167C4.02127 10.3741 5.04973 9.56827 6.23435 9.56223C6.49259 9.56452 6.7491 9.60431 6.99573 9.68036V7.27924C4.76012 7.31684 2.75805 8.70109 1.89222 10.748C1.02639 12.7949 1.46038 15.1565 2.99849 16.7679C3.95458 17.409 5.08683 17.7411 6.2403 17.7188C9.35983 17.7188 11.8906 15.2112 11.8971 12.1137Z" fill="currentColor"></path></svg>
-      </a>
-      <a href="#" class="text-gray-500 hover:text-black">
-        <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.77758 0H13.3969C14.3767 0 15.1744 0.8004 15.1744 1.7922V17.4L13.3101 15.747L12.2609 14.7726L11.151 13.7373L11.6106 15.3468H1.77758C0.797741 15.3468 0 14.5464 0 13.5546V1.7922C0 0.8004 0.797741 0 1.77758 0ZM9.47752 10.6575C9.73765 10.9881 10.0498 11.3622 10.0498 11.3622C11.9661 11.3013 12.7032 10.0398 12.7032 10.0398C12.7032 7.2384 11.4545 4.9677 11.4545 4.9677C10.2059 4.0281 9.01795 4.0542 9.01795 4.0542L8.89655 4.1934C10.3706 4.6458 11.0557 5.2983 11.0557 5.2983C10.1539 4.8024 9.26941 4.5588 8.44565 4.4631C7.82133 4.3935 7.22303 4.4109 6.69409 4.4805C6.64867 4.4805 6.60986 4.48713 6.56612 4.49461C6.55976 4.49569 6.55329 4.4968 6.54668 4.4979C6.24319 4.524 5.50615 4.6371 4.57834 5.046C4.25751 5.1939 4.06675 5.2983 4.06675 5.2983C4.06675 5.2983 4.78645 4.611 6.34725 4.1586L6.26054 4.0542C6.26054 4.0542 5.0726 4.0281 3.82396 4.9677C3.82396 4.9677 2.57532 7.2384 2.57532 10.0398C2.57532 10.0398 3.30369 11.3013 5.22 11.3622C5.22 11.3622 5.54084 10.9707 5.80097 10.6401C4.69974 10.3095 4.28352 9.61351 4.28352 9.61351C4.28352 9.61351 4.37024 9.67441 4.52632 9.76141C4.53499 9.77011 4.54366 9.77881 4.561 9.78751C4.57401 9.79621 4.58701 9.80273 4.60002 9.80926C4.61303 9.81578 4.62603 9.82231 4.63904 9.83101C4.85582 9.95281 5.0726 10.0485 5.27203 10.1268C5.62755 10.266 6.05243 10.4052 6.54668 10.5009C7.19702 10.6227 7.96007 10.6662 8.7925 10.5096C9.20004 10.44 9.61625 10.3182 10.0498 10.1355C10.3533 10.0224 10.6915 9.85711 11.047 9.62221C11.047 9.62221 10.6134 10.3356 9.47752 10.6575ZM5.13306 8.2649C5.13306 7.73419 5.52326 7.29919 6.01751 7.29919C6.51176 7.29919 6.91063 7.73419 6.90196 8.2649C6.90196 8.7956 6.51176 9.2306 6.01751 9.2306C5.53193 9.2306 5.13306 8.7956 5.13306 8.2649ZM8.29801 8.2649C8.29801 7.73419 8.68821 7.29919 9.18246 7.29919C9.67671 7.29919 10.0669 7.73419 10.0669 8.2649C10.0669 8.7956 9.67671 9.2306 9.18246 9.2306C8.69688 9.2306 8.29801 8.7956 8.29801 8.2649Z" fill="currentColor"></path></svg>
-      </a>
-    </div>
-  
-    <!-- Enlaces -->
-    <div class="flex flex-wrap justify-center space-x-4 text-sm text-gray-500 mb-4">
-      <a href="#" class="hover:text-black">POLÍTICA DE PRIVACIDAD</a>
-      <a href="#" class="hover:text-black">TERMS OF SERVICE</a>
-      <a href="#" class="hover:text-black">MEDIA ENQUIRIES</a>
-      <a href="#" class="hover:text-black">CONTACT US</a>
-    </div>
-  
-    <!-- Selector de idioma -->
-    <div class="flex justify-center">
-      <button class="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
-        <span class="text-sm font-medium">ES</span>
-        <img src="./assets/images/3.png" alt="Bandera de España" class="h-4 w-4">
-      </button>
-    </div>
-  </footer>
-  <div class="bg-blue-900 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 GIANTX. Todos los derechos reservados.</p>
-    </div>
-  </div>
+    <footer class="text-center py-6 border-t-2 border-blue-700">
+        <!-- Logo -->
+        <div class="flex justify-center mb-6">
+            <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M36 31.1771V18.3858H27.2508L31.4167 20.7239V28.5307L20.276 34.9625L18 40.2203L15.724 34.9625L4.58375 28.5307V13.0386L15.7227 6.60762L18 1.34654L20.2773 6.60762L31.4167 13.0386L36 10.3922L18 0L0 10.3922V31.1771L18 41.5693L36 31.1771Z"
+                    fill="black"></path>
+                <path d="M28.9885 27.1521V22.308L22.763 18.7139L20.1377 22.042L28.9885 27.1521Z" fill="blue"></path>
+                <path
+                    d="M28.989 14.4635H28.9886H20.5988L17.9999 15.964L15.401 14.4635H7.01074L13.8048 18.3858L7.01074 22.3085V27.1525H7.01115L17.9999 20.808L22.195 18.3858L28.9886 14.4635H28.989Z"
+                    fill="blue"></path>
+            </svg>
+        </div>
 
-  <script src="../js/script.js"></script>
+        <!-- Redes Sociales -->
+        <div class="flex items-center justify-center space-x-4 mb-6">
+            <a class="SocialLinks_link__rvhLB" href="https://twitter.com/giantx_es" target="_blank"
+                aria-label="Follow me on Twitter"><svg width="20" height="20" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                        fill="currentColor"></path>
+                </svg></a>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-black">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.99954 1.78603C11.3507 1.78603 11.6267 1.79652 12.556 1.83844C13.4154 1.87687 13.8801 2.0201 14.191 2.14238C14.6032 2.30308 14.8967 2.49174 15.2041 2.79917C15.5116 3.10661 15.7037 3.40007 15.8609 3.81231C15.9797 4.12324 16.1264 4.58788 16.1649 5.4473C16.2068 6.37659 16.2173 6.65259 16.2173 9.00376C16.2173 11.3549 16.2068 11.6309 16.1649 12.5602C16.1264 13.4196 15.9832 13.8843 15.8609 14.1952C15.7002 14.6075 15.5116 14.9009 15.2041 15.2084C14.8967 15.5158 14.6032 15.7079 14.191 15.8651C13.8801 15.9839 13.4154 16.1307 12.556 16.1691C11.6267 16.211 11.3507 16.2215 8.99954 16.2215C6.64836 16.2215 6.37237 16.211 5.44308 16.1691C4.58366 16.1307 4.11901 15.9874 3.80808 15.8651C3.39584 15.7044 3.10238 15.5158 2.79495 15.2084C2.48751 14.9009 2.29537 14.6075 2.13815 14.1952C2.01937 13.8843 1.87264 13.4196 1.83421 12.5602C1.79229 11.6309 1.78181 11.3549 1.78181 9.00376C1.78181 6.65259 1.79229 6.37659 1.83421 5.4473C1.87264 4.58788 2.01588 4.12324 2.13815 3.81231C2.29886 3.40007 2.48751 3.10661 2.79495 2.79917C3.10238 2.49174 3.39584 2.29959 3.80808 2.14238C4.11901 2.0236 4.58366 1.87687 5.44308 1.83844C6.37237 1.79302 6.65186 1.78603 8.99954 1.78603ZM8.99954 0.199951C6.60993 0.199951 6.30949 0.210432 5.36971 0.252355C4.43344 0.294278 3.79411 0.444502 3.23514 0.661103C2.6552 0.884692 2.1661 1.18863 1.677 1.67773C1.1879 2.16683 0.887454 2.65943 0.660371 3.23587C0.443769 3.79484 0.293545 4.43417 0.251622 5.37394C0.209699 6.31022 0.199219 6.61066 0.199219 9.00027C0.199219 11.3899 0.209699 11.6903 0.251622 12.6301C0.293545 13.5664 0.443769 14.2057 0.660371 14.7682C0.88396 15.3481 1.1879 15.8372 1.677 16.3263C2.1661 16.8154 2.6587 17.1158 3.23514 17.3429C3.79411 17.5595 4.43344 17.7098 5.37321 17.7517C6.31298 17.7936 6.60993 17.8041 9.00304 17.8041C11.3961 17.8041 11.6931 17.7936 12.6329 17.7517C13.5691 17.7098 14.2085 17.5595 14.7709 17.3429C15.3509 17.1193 15.84 16.8154 16.3291 16.3263C16.8182 15.8372 17.1186 15.3446 17.3457 14.7682C17.5623 14.2092 17.7125 13.5699 17.7544 12.6301C17.7964 11.6903 17.8069 11.3934 17.8069 9.00027C17.8069 6.60717 17.7964 6.31022 17.7544 5.37044C17.7125 4.43417 17.5623 3.79484 17.3457 3.23238C17.1221 2.65244 16.8182 2.16334 16.3291 1.67424C15.84 1.18514 15.3474 0.884692 14.7709 0.65761C14.212 0.441008 13.5726 0.290784 12.6329 0.248861C11.6896 0.210432 11.3891 0.199951 8.99954 0.199951ZM8.99939 4.48308C6.50498 4.48308 4.47871 6.50586 4.47871 9.00376C4.47871 11.5017 6.50149 13.5244 8.99939 13.5244C11.4973 13.5244 13.5201 11.5017 13.5201 9.00376C13.5201 6.50586 11.4973 4.48308 8.99939 4.48308ZM8.99939 11.9349C7.37837 11.9349 6.06479 10.6213 6.06479 9.00027C6.06479 7.37925 7.37837 6.06566 8.99939 6.06566C10.6204 6.06566 11.934 7.37925 11.934 9.00027C11.934 10.6213 10.6204 11.9349 8.99939 11.9349ZM14.7535 4.30138C14.7535 4.88408 14.2812 5.35644 13.6985 5.35644C13.1158 5.35644 12.6434 4.88408 12.6434 4.30138C12.6434 3.71869 13.1158 3.24632 13.6985 3.24632C14.2812 3.24632 14.7535 3.71869 14.7535 4.30138Z"
+                        fill="currentColor"></path>
+                </svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-black">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.0901 2.1121C18.8685 1.28468 18.2037 0.631452 17.3616 0.402823C15.8437 0 9.75 0 9.75 0C9.75 0 3.65625 0 2.12727 0.402823C1.28523 0.620565 0.631534 1.27379 0.398864 2.1121C0 3.61452 0 6.75 0 6.75C0 6.75 0 9.88548 0.409943 11.3879C0.631534 12.2153 1.29631 12.8685 2.13835 13.0972C3.65625 13.5 9.75 13.5 9.75 13.5C9.75 13.5 15.8437 13.5 17.3727 13.0972C18.2148 12.8794 18.8685 12.2262 19.1011 11.3879C19.5 9.88548 19.5 6.75 19.5 6.75C19.5 6.75 19.5 3.61452 19.0901 2.1121ZM7.75568 9.60242V3.89758L12.8523 6.75L7.75568 9.60242Z"
+                        fill="currentColor"></path>
+                </svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-black">
+                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.5"
+                        d="M7.00165 7.28238V6.56182C6.74974 6.52218 6.4953 6.50047 6.24027 6.49684C3.77126 6.49167 1.58535 8.08033 0.843939 10.4188C0.102529 12.7572 0.977679 15.3027 3.00441 16.7029C1.48624 15.0896 1.0647 12.741 1.92807 10.7062C2.79145 8.67149 4.7785 7.33054 7.00165 7.28238Z"
+                        fill="currentColor"></path>
+                    <path opacity="0.5"
+                        d="M7.13854 15.4448C8.51899 15.443 9.65371 14.3631 9.71414 12.9937V0.773719H11.9626C11.9167 0.518381 11.8948 0.259362 11.8972 0H8.8219V12.2082C8.77076 13.5846 7.63339 14.6748 6.2463 14.677C5.83179 14.6735 5.42404 14.5723 5.05664 14.3817C5.53959 15.0461 6.31333 15.4412 7.13854 15.4448Z"
+                        fill="currentColor"></path>
+                    <path opacity="0.5"
+                        d="M16.1627 4.91986V4.24064C15.3352 4.24092 14.5261 3.99846 13.8369 3.5437C14.4411 4.24106 15.2575 4.72413 16.1627 4.91986Z"
+                        fill="currentColor"></path>
+                    <path opacity="0.5"
+                        d="M13.8366 3.54376C13.1577 2.77614 12.7835 1.7894 12.7838 0.767822H11.9629C12.1772 1.90931 12.8547 2.91311 13.8366 3.54376Z"
+                        fill="currentColor"></path>
+                    <path opacity="0.5"
+                        d="M6.24042 9.55052C5.0558 9.55655 4.02734 10.3624 3.74598 11.505C3.46463 12.6476 4.00259 13.8337 5.05077 14.3818C4.48282 13.6033 4.40259 12.5742 4.84309 11.7181C5.2836 10.862 6.17041 10.3235 7.13861 10.3242C7.39677 10.3274 7.65315 10.3672 7.89999 10.4424V7.33567C7.64792 7.29817 7.39349 7.27844 7.13861 7.27661H7.0018V9.63911C6.75368 9.57305 6.4972 9.54321 6.24042 9.55052Z"
+                        fill="currentColor"></path>
+                    <path opacity="0.5"
+                        d="M16.1615 4.91992V7.28242C14.6296 7.27948 13.1375 6.79803 11.8966 5.90627V12.1137C11.89 15.2112 9.35929 17.7188 6.23977 17.7188C5.08126 17.7208 3.95066 17.3659 3.00391 16.7029C4.5839 18.3902 7.04282 18.9456 9.20243 18.103C11.362 17.2604 12.7824 15.1914 12.7829 12.8875V6.6977C14.028 7.58362 15.5219 8.0588 17.0537 8.05614V5.01442C16.7538 5.01347 16.4548 4.98181 16.1615 4.91992Z"
+                        fill="currentColor"></path>
+                    <path
+                        d="M11.8971 12.1137V5.90626C13.1419 6.7929 14.6361 7.26816 16.168 7.2647V4.9022C15.2629 4.71244 14.4446 4.23566 13.8362 3.54376C12.8544 2.91311 12.1768 1.90931 11.9625 0.767822H9.71409V12.9938C9.66912 14.0845 8.93335 15.0273 7.88084 15.3428C6.82833 15.6583 5.69005 15.2773 5.0447 14.3935C3.99652 13.8454 3.45856 12.6593 3.73991 11.5167C4.02127 10.3741 5.04973 9.56827 6.23435 9.56223C6.49259 9.56452 6.7491 9.60431 6.99573 9.68036V7.27924C4.76012 7.31684 2.75805 8.70109 1.89222 10.748C1.02639 12.7949 1.46038 15.1565 2.99849 16.7679C3.95458 17.409 5.08683 17.7411 6.2403 17.7188C9.35983 17.7188 11.8906 15.2112 11.8971 12.1137Z"
+                        fill="currentColor"></path>
+                </svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-black">
+                <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1.77758 0H13.3969C14.3767 0 15.1744 0.8004 15.1744 1.7922V17.4L13.3101 15.747L12.2609 14.7726L11.151 13.7373L11.6106 15.3468H1.77758C0.797741 15.3468 0 14.5464 0 13.5546V1.7922C0 0.8004 0.797741 0 1.77758 0ZM9.47752 10.6575C9.73765 10.9881 10.0498 11.3622 10.0498 11.3622C11.9661 11.3013 12.7032 10.0398 12.7032 10.0398C12.7032 7.2384 11.4545 4.9677 11.4545 4.9677C10.2059 4.0281 9.01795 4.0542 9.01795 4.0542L8.89655 4.1934C10.3706 4.6458 11.0557 5.2983 11.0557 5.2983C10.1539 4.8024 9.26941 4.5588 8.44565 4.4631C7.82133 4.3935 7.22303 4.4109 6.69409 4.4805C6.64867 4.4805 6.60986 4.48713 6.56612 4.49461C6.55976 4.49569 6.55329 4.4968 6.54668 4.4979C6.24319 4.524 5.50615 4.6371 4.57834 5.046C4.25751 5.1939 4.06675 5.2983 4.06675 5.2983C4.06675 5.2983 4.78645 4.611 6.34725 4.1586L6.26054 4.0542C6.26054 4.0542 5.0726 4.0281 3.82396 4.9677C3.82396 4.9677 2.57532 7.2384 2.57532 10.0398C2.57532 10.0398 3.30369 11.3013 5.22 11.3622C5.22 11.3622 5.54084 10.9707 5.80097 10.6401C4.69974 10.3095 4.28352 9.61351 4.28352 9.61351C4.28352 9.61351 4.37024 9.67441 4.52632 9.76141C4.53499 9.77011 4.54366 9.77881 4.561 9.78751C4.57401 9.79621 4.58701 9.80273 4.60002 9.80926C4.61303 9.81578 4.62603 9.82231 4.63904 9.83101C4.85582 9.95281 5.0726 10.0485 5.27203 10.1268C5.62755 10.266 6.05243 10.4052 6.54668 10.5009C7.19702 10.6227 7.96007 10.6662 8.7925 10.5096C9.20004 10.44 9.61625 10.3182 10.0498 10.1355C10.3533 10.0224 10.6915 9.85711 11.047 9.62221C11.047 9.62221 10.6134 10.3356 9.47752 10.6575ZM5.13306 8.2649C5.13306 7.73419 5.52326 7.29919 6.01751 7.29919C6.51176 7.29919 6.91063 7.73419 6.90196 8.2649C6.90196 8.7956 6.51176 9.2306 6.01751 9.2306C5.53193 9.2306 5.13306 8.7956 5.13306 8.2649ZM8.29801 8.2649C8.29801 7.73419 8.68821 7.29919 9.18246 7.29919C9.67671 7.29919 10.0669 7.73419 10.0669 8.2649C10.0669 8.7956 9.67671 9.2306 9.18246 9.2306C8.69688 9.2306 8.29801 8.7956 8.29801 8.2649Z"
+                        fill="currentColor"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Enlaces -->
+        <div class="flex flex-wrap justify-center space-x-4 text-sm text-gray-500 mb-4">
+            <a href="#" class="hover:text-black">POLÍTICA DE PRIVACIDAD</a>
+            <a href="#" class="hover:text-black">TERMS OF SERVICE</a>
+            <a href="#" class="hover:text-black">MEDIA ENQUIRIES</a>
+            <a href="#" class="hover:text-black">CONTACT US</a>
+        </div>
+
+        <!-- Selector de idioma -->
+        <div class="flex justify-center">
+            <button class="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-full shadow hover:bg-gray-200">
+                <span class="text-sm font-medium">ES</span>
+                <img src="../assets/images/3.png" alt="Bandera de España" class="h-4 w-4">
+            </button>
+        </div>
+    </footer>
+    <div class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 GIANTX. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

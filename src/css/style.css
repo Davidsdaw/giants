@@ -5,3 +5,34 @@
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in-out;
   }
+
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-right: 50px; /* Espacio entre textos */
+    font-size: 20px; /* Ajusta el tamaño del texto */
+    animation: scroll 3.5s linear infinite;
+    /* animation-fill-mode: forwards; */
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-200px);
+    }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
